@@ -1,0 +1,7 @@
+---
+- name: restart libvirtd
+  service:
+    name: libvirtd
+    state: restarted
+    enabled: yes
+  tags: laptop

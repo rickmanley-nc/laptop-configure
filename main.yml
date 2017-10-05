@@ -1,0 +1,42 @@
+---
+- name: Start and Enable firewalld
+  systemd: name=firewalld state=started enabled=yes
+  tags: laptop
+
+- name: Configure firewalld
+  firewalld:
+    port: "{{ item }}"
+    permanent: true
+    immediate: yes
+    state: enabled
+    zone: FedoraWorkstation
+  with_items: "{{ laptop_ports }}"
+  tags: laptop
+
+- name: Install httpd
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - httpd
+    - libvirt-client
+  tags: laptop
+
+- name: Update libvirtd.conf (needed for Satellite to use LibVirt as a Compute Resource)
+  template:
+    src: "../templates/libvirtd.conf.j2"
+    dest: /etc/libvirt/libvirtd.conf
+    mode: 0644
+    backup: yes
+  notify: restart libvirtd
+  tags: laptop
+
+- name: Ensure libvirtd daemon is set to listen for connections
+  template:
+    src: "../templates/libvirtd.j2"
+    dest: /etc/sysconfig/libvirtd
+    mode: 0644
+    backup: yes
+  notify: restart libvirtd
+  tags: laptop
+
