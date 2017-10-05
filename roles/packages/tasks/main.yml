@@ -1,4 +1,10 @@
 ---
+- name: Enable Google Chrome Repository
+  template:
+    src: "../templates/google-chrome.repo.j2"
+    dest: /etc/yum.repos.d/google-chrome.repo
+  tags: packages
+
 - name: Install Packages
   yum:
     name: "{{ item }}"
@@ -6,4 +12,9 @@
   with_items:
     - httpd
     - libvirt-client
+    - virt-manager
+    - atom
+    - google-chrome-stable
+    - NetworkManager-openvpn
+    - NetworkManager-openvpn-gnome
   tags: packages

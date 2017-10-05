@@ -7,3 +7,18 @@
     - packages
     - libvirtd
     - create-libvirt-network
+
+#need#
+#/etc/hosts
+#127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+#::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+#
+
+
+
+
+#192.168.126.1 laptop.rnelson-demo.com
+#192.168.126.2 satellite.rnelson-demo.com
+#192.168.126.3 tower.rnelson-demo.com
+#192.168.126.4 idm.rnelson-demo.com
+#192.168.126.5 cloudforms.rnelson-demo.com
