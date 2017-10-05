@@ -4,4 +4,4 @@
     name: libvirtd
     state: restarted
     enabled: yes
-  tags: laptop
+  tags: libvirtd

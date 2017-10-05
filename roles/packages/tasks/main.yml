@@ -1,0 +1,9 @@
+---
+- name: Install Packages
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - httpd
+    - libvirt-client
+  tags: packages

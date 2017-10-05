@@ -1,0 +1,18 @@
+---
+- name: Update libvirtd.conf (needed for Satellite to use LibVirt as a Compute Resource)
+  template:
+    src: "../templates/libvirtd.conf.j2"
+    dest: /etc/libvirt/libvirtd.conf
+    mode: 0644
+    backup: yes
+  notify: restart libvirtd
+  tags: libvirtd
+
+- name: Ensure libvirtd daemon is set to listen for connections
+  template:
+    src: "../templates/libvirtd.j2"
+    dest: /etc/sysconfig/libvirtd
+    mode: 0644
+    backup: yes
+  notify: restart libvirtd
+  tags: libvirtd

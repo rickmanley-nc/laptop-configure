@@ -1,0 +1,14 @@
+---
+- name: Start and Enable firewalld
+  systemd: name=firewalld state=started enabled=yes
+  tags: firewall
+
+- name: Configure firewalld
+  firewalld:
+    port: "{{ item }}"
+    permanent: true
+    immediate: yes
+    state: enabled
+    zone: FedoraWorkstation
+  with_items: "{{ laptop_ports }}"
+  tags: firewall

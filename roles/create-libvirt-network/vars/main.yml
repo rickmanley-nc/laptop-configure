@@ -1,10 +1,4 @@
 ---
-laptop_ports:
-  - '80/tcp'   # HTTP
-  - '443/tcp'  # HTTPS
-  - '22/tcp'   # SSH
-  - '22/udp'   # SSH
-
 libvirt_network_name: development
 libvirt_forward_mode: nat
 libvirt_bridge_name: virbr7

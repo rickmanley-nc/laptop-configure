@@ -1,6 +1,0 @@
----
-- hosts: Laptop
-  name: Configure Laptop Network
-
-  roles:
-    - create-libvirt-network
