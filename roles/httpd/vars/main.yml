@@ -1,0 +1,15 @@
+---
+laptop_hostname: laptop.rnelson-demo.com
+laptop_ip_address: 192.168.100.1
+
+satellite_hostname: satellite.rnelson-demo.com
+satellite_ip_address: 192.168.100.2
+
+tower_hostname: tower.rnelson-demo.com
+tower_ip_address: 192.168.100.3
+
+idm_hostname: idm.rnelson-demo.com
+idm_ip_address: 192.168.100.4
+
+cloudforms_hostname: cloudforms.rnelson-demo.com
+cloudforms_ip_address: 192.168.100.5
