@@ -13,8 +13,11 @@
     - httpd
     - libvirt-client
     - virt-manager
+    - virt-install
     - atom
     - google-chrome-stable
     - NetworkManager-openvpn
     - NetworkManager-openvpn-gnome
+    - ansible
+    - wget
   tags: packages

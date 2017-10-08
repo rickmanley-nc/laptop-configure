@@ -1,6 +1,6 @@
 ---
-- hosts: Laptop
-  name: Configure Laptop
+- hosts:  Laptop
+  name:   Configure Laptop
 
   roles:
     - firewall
@@ -11,4 +11,4 @@
 
 #  tasks:
 #    - name: test
-#    
+#
