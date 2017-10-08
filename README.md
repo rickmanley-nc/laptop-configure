@@ -13,6 +13,7 @@
 - `git clone https://www.github.com/rickmanley-nc/laptop-configure`
 - `cd /home/rnelson/git/laptop-configure`
 - Install Atom from <https://atom.io/>
+  - "Ctrl + Shift + P", install Beautify and File Icons
 - Modify the following files with the correct variables for your environment
   - /home/rnelson/git/laptop-configure/group_vars/all
   - /home/rnelson/git/laptop-configure/roles/create-libvirt-network/vars/main.yml
@@ -40,7 +41,9 @@
 
 ## Remaining Items to Complete
 
-- list out each variable to update
+- update Vars section of Readme
+- Update global vars to make it more human readable
+- Pull create-libvirt-network variables to global... need to change variable names to match with 'Operations'
 - add VPN configuration
 - add NIST datastream files
 
