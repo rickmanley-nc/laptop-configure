@@ -1,6 +1,6 @@
-# Guide for configuring Laptop
+# Using Ansible to Configure Laptop - SA
 
-# Requirements and General Steps
+## Requirements and General Steps
 
 - Fedora installed
   - 32 GiB RAM
@@ -43,4 +43,4 @@
 
 Red Hat, the Shadowman logo, Ansible, and Ansible Tower are trademarks or registered trademarks of Red Hat, Inc. or its subsidiaries in the United States and other countries.
 
-All other parts of Ansible Lightbulb are made available under the terms of the [MIT License](LICENSE).
+All other parts of this project are made available under the terms of the [MIT License](LICENSE).
