@@ -1,5 +1,5 @@
 ---
-- hosts:  Laptop
+- hosts:  all
   name:   Configure Laptop
 
   roles:
@@ -8,7 +8,3 @@
     - libvirtd
     - httpd
     - create-libvirt-network
-
-#  tasks:
-#    - name: test
-#

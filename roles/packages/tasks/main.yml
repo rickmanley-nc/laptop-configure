@@ -14,10 +14,12 @@
     - libvirt-client
     - virt-manager
     - virt-install
-    - atom
+    - scap-security-guide
+    - openscap
+    - scap-workbench
     - google-chrome-stable
     - NetworkManager-openvpn
     - NetworkManager-openvpn-gnome
-    - ansible
     - wget
+    - git
   tags: packages

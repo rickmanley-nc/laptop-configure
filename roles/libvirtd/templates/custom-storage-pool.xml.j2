@@ -1,0 +1,11 @@
+<pool type='dir'>
+  <name>{{ libvirt_storage_pool_name }}</name>
+  <capacity unit='bytes'>0</capacity>
+  <allocation unit='bytes'>0</allocation>
+  <available unit='bytes'>0</available>
+  <source>
+  </source>
+  <target>
+    <path>/home/{{ laptop_username }}/{{ libvirt_storage_pool_name }}</path>
+  </target>
+</pool>

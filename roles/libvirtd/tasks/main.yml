@@ -16,3 +16,36 @@
     backup: yes
   notify: restart libvirtd
   tags: libvirtd
+
+- name: Make {{ libvirt_storage_pool_name }} directory
+  file:
+    path: /home/{{ laptop_username }}/{{ libvirt_storage_pool_name }}
+    state: directory
+    mode: 0775
+  tags: libvirtd
+
+- name: Make Gold directory
+  file:
+    path: /home/{{ laptop_username }}/{{ libvirt_storage_pool_name }}/Gold
+    state: directory
+    mode: 0775
+  tags: libvirtd
+
+- name: Create {{ libvirt_network_name }} network from Template
+  template:
+    src: "../templates/custom-storage-pool.xml.j2"
+    dest: /etc/libvirt/storage/{{ libvirt_storage_pool_name }}.xml
+    mode: 0644
+  tags: libvirtd
+
+- name: Define LibVirt Storage Pool {{ libvirt_storage_pool_name }}
+  command: virsh pool-define /etc/libvirt/storage/{{ libvirt_storage_pool_name }}.xml
+  tags: libvirtd
+
+- name: Start LibVirt Storage Pool {{ libvirt_storage_pool_name }}
+  command: virsh pool-start {{ libvirt_storage_pool_name }}
+  tags: libvirtd
+
+- name: Set {{ libvirt_network_name }} network to autostart
+  command: virsh pool-autostart {{ libvirt_storage_pool_name }}
+  tags: libvirtd
