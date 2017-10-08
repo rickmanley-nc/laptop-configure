@@ -10,7 +10,7 @@
 - Set hostname to laptop.rnelson-demo.com
 - `yum install ansible git`
 - `mkdir /home/rnelson/git ; cd /home/rnelson/git`
-- `git clone https://www.github.com/rickmanley-nc/laptop-configure`
+- `git clone git@github.com:rickmanley-nc/laptop-configure.git`
 - `cd /home/rnelson/git/laptop-configure`
 - Install Atom from <https://atom.io/>
   - "Ctrl + Shift + P", install Beautify and File Icons
@@ -45,6 +45,7 @@ All variables are located in `group_vars/all`.
 
 - add VPN configuration
 - configure yubikey
+- add openscap ssg-rhel7-examples with git.
 
 ## License
 
