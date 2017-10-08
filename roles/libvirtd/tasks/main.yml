@@ -8,7 +8,7 @@
   notify: restart libvirtd
   tags: libvirtd
 
-- name: Ensure libvirtd daemon is set to listen for connections
+- name: Ensure libvirtd daemon is set to listen for connections (needed for Satellite to use LibVirt as Compute Resource)
   template:
     src: "../templates/libvirtd.j2"
     dest: /etc/sysconfig/libvirtd
@@ -19,19 +19,19 @@
 
 - name: Make {{ libvirt_storage_pool_name }} directory
   file:
-    path: /home/{{ laptop_username }}/{{ libvirt_storage_pool_name }}
+    path: /home/{{ laptop_local_user }}/{{ libvirt_storage_pool_name }}
     state: directory
     mode: 0775
   tags: libvirtd
 
 - name: Make Gold directory
   file:
-    path: /home/{{ laptop_username }}/{{ libvirt_storage_pool_name }}/Gold
+    path: /home/{{ laptop_local_user }}/{{ libvirt_storage_pool_name }}/Gold
     state: directory
     mode: 0775
   tags: libvirtd
 
-- name: Create {{ libvirt_network_name }} network from Template
+- name: Create {{ libvirt_storage_pool_name }} Storage Pool from Template
   template:
     src: "../templates/custom-storage-pool.xml.j2"
     dest: /etc/libvirt/storage/{{ libvirt_storage_pool_name }}.xml
@@ -46,6 +46,6 @@
   command: virsh pool-start {{ libvirt_storage_pool_name }}
   tags: libvirtd
 
-- name: Set {{ libvirt_network_name }} network to autostart
+- name: Set {{ libvirt_storage_pool_name }} Storage Pool to autostart
   command: virsh pool-autostart {{ libvirt_storage_pool_name }}
   tags: libvirtd
