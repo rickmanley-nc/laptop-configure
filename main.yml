@@ -7,4 +7,5 @@
     - packages
     - libvirtd
     - httpd
+    - openscap
     - create-libvirt-network

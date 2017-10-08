@@ -1,0 +1,7 @@
+---
+- name: Make OpenSCAP directory
+  file:
+    path: /home/{{ laptop_username }}/openscap
+    state: directory
+    mode: 0775
+  tags: openscap

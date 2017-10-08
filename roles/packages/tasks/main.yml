@@ -21,5 +21,4 @@
     - NetworkManager-openvpn
     - NetworkManager-openvpn-gnome
     - wget
-    - git
   tags: packages
