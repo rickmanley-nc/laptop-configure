@@ -1,28 +1,21 @@
 # Using Ansible to Configure Laptop - SA
 
 ## Requirements and General Steps
-
 - Fedora installed
-
   - 32 GiB RAM (16 GiB Minimum)
   - "/" 50 GiB
   - "/home/" 200+ GiB
   - "/boot" 200 MiB
   - "swap" 6 GiB
-
 - Set hostname to laptop.rnelson-demo.com
 - `yum install ansible git`
 - `mkdir /home/rnelson/git ; cd /home/rnelson/git`
 - `git clone https://www.github.com/rickmanley-nc/laptop-configure`
 - `cd /home/rnelson/git/laptop-configure`
 - Install Atom from <https://atom.io/>
-
   - "Ctrl + Shift + P", install Beautify and File Icons
-
 - Modify the following files with the correct variables for your environment
-
   - /home/rnelson/git/laptop-configure/group_vars/all
-
 - `ansible-playbook -i "localhost," -c local main.yml -t firewall,packages,libvirtd,httpd,openscap`
 - `ansible-playbook -i "localhost," -c local main.yml -t network`
 
