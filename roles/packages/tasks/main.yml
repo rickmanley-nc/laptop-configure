@@ -21,4 +21,5 @@
     - NetworkManager-openvpn
     - NetworkManager-openvpn-gnome
     - wget
+    - libguestfs-tools
   tags: packages
