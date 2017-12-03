@@ -22,4 +22,5 @@
     - NetworkManager-openvpn-gnome
     - wget
     - libguestfs-tools
+    - guake
   tags: packages
