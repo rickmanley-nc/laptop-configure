@@ -12,6 +12,7 @@
   with_items:
     - httpd
     - libvirt-client
+    - libguestfs-tools
     - virt-manager
     - virt-install
     - scap-security-guide
@@ -21,6 +22,7 @@
     - NetworkManager-openvpn
     - NetworkManager-openvpn-gnome
     - wget
-    - libguestfs-tools
     - guake
+    - NetworkManager-openvpn
+    - NetworkManager-openvpn-gnome
   tags: packages

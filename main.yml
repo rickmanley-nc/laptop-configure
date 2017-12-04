@@ -9,3 +9,9 @@
     - httpd
     - openscap
     - create-libvirt-network
+
+- name: echo VPN
+  debug: "Need to install redhat-internal-cert-install and redhat-internal-NetworkManager-openvpn-profiles"
+
+- name: echo YubiKey
+  debug: "Need to configure YubiKey"
