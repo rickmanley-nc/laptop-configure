@@ -3,7 +3,7 @@
 ## Requirements and General Steps
 - Fedora installed
   - 32 GiB RAM (16 GiB Minimum)
-  - "/" 50 GiB
+  - "/" 40 GiB
   - "/home/" 200+ GiB
   - "/boot" 200 MiB
   - "swap" 6 GiB
@@ -43,9 +43,6 @@ All variables are located in `group_vars/all`.
 
 ## Remaining Items to Complete
 
-- add VPN configuration
-- configure yubikey
-- add openscap ssg-rhel7-examples with git.
 
 ## License
 

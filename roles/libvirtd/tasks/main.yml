@@ -24,9 +24,9 @@
     mode: 0775
   tags: libvirtd
 
-- name: Make Gold directory
+- name: Make Original directory
   file:
-    path: /home/{{ laptop_local_user }}/{{ libvirt_storage_pool_name }}/Gold
+    path: /home/{{ laptop_local_user }}/{{ libvirt_storage_pool_name }}/Original
     state: directory
     mode: 0775
   tags: libvirtd
