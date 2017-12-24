@@ -1,9 +1,11 @@
 ---
-- hosts:  all
-  name:   Configure Laptop
+- hosts:  local
+  name:   a playbook to configure my work laptop
+  connection: local
 
   roles:
     - firewall
+    - myfiles
     - packages
     - libvirtd
     - httpd

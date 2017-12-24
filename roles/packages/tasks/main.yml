@@ -22,6 +22,7 @@
     - NetworkManager-openvpn
     - NetworkManager-openvpn-gnome
     - wget
+    - vim
     - guake
     - NetworkManager-openvpn
     - NetworkManager-openvpn-gnome
