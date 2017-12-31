@@ -3,4 +3,4 @@
   copy:
     src: vimrc
     dest: /home/{{ laptop_local_user }}/.vimrc
-  tags: files
+  tags: myfiles

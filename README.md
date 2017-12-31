@@ -1,6 +1,6 @@
 # Using Ansible to Configure Laptop - SA
 
-## Requirements and General Steps
+## Requirements and Steps
 - Fedora installed
   - 32 GiB RAM (16 GiB Minimum)
   - "/" 40 GiB
@@ -12,8 +12,8 @@
   - "Ctrl + Shift + P", install Beautify and File Icons
 - Modify the following files with the correct variables for environment
   - /home/rnelson/git/laptop-configure/group_vars/all
-- `ansible-playbook -i hosts main.yml -t firewall,packages,libvirtd,httpd,openscap,files`
-- `ansible-playbook -i hosts main.yml -t network`
+- Execute the following command to pull down the run.sh script which will configure the environment and execute the main.yml playbook
+  - bash wget -qO- https://github.com/rickmanley-nc/laptop-configure/raw/master/run.sh | sudo bash
 
 ## Roles
 
@@ -31,8 +31,11 @@ All variables are located in `group_vars/all`.
 
 ## Tags
 
+##
+- `ansible-playbook -i hosts main.yml -t firewall,packages,libvirtd,httpd,openscap,files`
+- `ansible-playbook -i hosts main.yml -t network`
 - firewall
-- files
+- myfiles
 - packages
 - libvirtd
 - httpd
@@ -41,7 +44,9 @@ All variables are located in `group_vars/all`.
 
 ## Remaining Items to Complete
 
+- include private and public ssh key
 - automate installation of Atom and Beutify / File Icons
+- store inventory-tower-initial-setup and manifest-rnelson-sales.zip
 
 ## License
 

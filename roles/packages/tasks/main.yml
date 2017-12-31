@@ -24,6 +24,4 @@
     - wget
     - vim
     - guake
-    - NetworkManager-openvpn
-    - NetworkManager-openvpn-gnome
   tags: packages
