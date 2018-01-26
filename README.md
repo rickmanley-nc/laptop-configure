@@ -27,13 +27,10 @@
 
 ## Vars
 
-All variables are located in `group_vars/all`.
+All variables are located in `group_vars/all`. Update that file with your environment details.
 
 ## Tags
 
-##
-- `ansible-playbook -i hosts main.yml -t firewall,packages,libvirtd,httpd,openscap,files`
-- `ansible-playbook -i hosts main.yml -t network`
 - firewall
 - myfiles
 - packages

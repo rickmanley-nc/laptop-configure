@@ -24,4 +24,5 @@
     - wget
     - vim
     - guake
+    - PyYAML
   tags: packages
