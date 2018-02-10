@@ -3,4 +3,16 @@
   copy:
     src: vimrc
     dest: /home/{{ laptop_local_user }}/.vimrc
+    owner: {{ laptop_local_user }}
+    group: {{ laptop_local_user }}
+    mode: 0664
+  tags: myfiles
+
+- name: Copy GDM's custom.conf which disables Wayland (BlueJeans workaround)
+  copy:
+    src: custom.conf
+    dest: /etc/gdm/custom.conf
+    owner: root
+    group: root
+    mode: 0644
   tags: myfiles
