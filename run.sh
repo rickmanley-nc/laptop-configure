@@ -14,6 +14,4 @@ sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 source ~/.bashrc
 exit 0
 
-
-
-# bash wget -qO- https://github.com/rickmanley-nc/laptop-configure/raw/master/run.sh | sudo bash
+# wget -qO- https://github.com/rickmanley-nc/laptop-configure/raw/master/run.sh | sudo bash
