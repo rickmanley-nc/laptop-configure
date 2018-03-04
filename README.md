@@ -44,6 +44,7 @@ All variables are located in `group_vars/all`. Update that file with your enviro
 - include private and public ssh key
 - automate installation of Atom and Beutify / File Icons
 - store inventory-tower-initial-setup and manifest-rnelson-sales.zip
+- https://developer.microsoft.com/en-us/windows/downloads/virtual-machines   and convert `qemu-img convert -f vmdk WinDev1710Eval-disk1.vmdk -O qcow2 WinDev1710Eval-disk1.qcow`
 
 ## License
 
