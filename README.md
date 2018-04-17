@@ -24,6 +24,7 @@
 - httpd (configures httpd for hosting necessary files)
 - openscap (makes separate directory, clone GitHub for scap-security-guide, copy combine-tailoring.py)
 - create-libvirt-network (creates libvirt network from user defined variables)
+- vpn-profiles (sets up SSH tunnel to Red Hat servers to download pre-configured VPN profiles)
 
 ## Vars
 

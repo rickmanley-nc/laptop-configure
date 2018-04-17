@@ -9,6 +9,11 @@ laptop_ports:
   - '22/tcp'   # SSH
   - '22/udp'   # SSH
 
+## vpn-profile vars
+redhat_ssh_server: ovpn-rdu2.redhat.com
+redhat_ssh_server_port: 330
+redhat_ssh_server_proxy_port: 9999
+
 ##Currently only referenced in /etc/hosts, but this will eventually be merged with other repos##
 domain:                    rnelson-demo.com
 
