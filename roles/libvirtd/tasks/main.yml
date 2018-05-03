@@ -26,7 +26,7 @@
 
 - name: Make Original directory
   file:
-    path: /home/{{ laptop_local_user }}/{{ libvirt_storage_pool_name }}/Original
+    path: /home/{{ laptop_local_user }}/{{ libvirt_storage_pool_name }}/original
     state: directory
     mode: 0775
   tags: libvirtd

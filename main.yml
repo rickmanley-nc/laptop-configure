@@ -9,9 +9,7 @@
     - packages
     - libvirtd
     - httpd
-    - openscap
     - create-libvirt-network
     - vpn-profiles
 
-- name: echo YubiKey
-  debug: "Need to configure YubiKey"
+#- name: Need to configure YubiKey

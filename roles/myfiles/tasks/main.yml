@@ -3,8 +3,8 @@
   copy:
     src: vimrc
     dest: /home/{{ laptop_local_user }}/.vimrc
-    owner: {{ laptop_local_user }}
-    group: {{ laptop_local_user }}
+    owner: "{{ laptop_local_user }}"
+    group: "{{ laptop_local_user }}"
     mode: 0664
   tags: myfiles
 
@@ -14,5 +14,12 @@
     dest: /etc/gdm/custom.conf
     owner: root
     group: root
+    mode: 0644
+  tags: myfiles
+
+- name: Populate /etc/hosts
+  template:
+    src: "../templates/hosts.j2"
+    dest: /etc/hosts
     mode: 0644
   tags: myfiles

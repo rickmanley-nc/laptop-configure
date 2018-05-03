@@ -8,7 +8,7 @@
   notify:   restart httpd
   tags:     httpd
 
-- name:     Populate /etc/hosts and host on httpd
+- name:     Populate /etc/hosts on httpd
   template:
     src:    "../templates/hosts.j2"
     dest:   /var/www/html/hosts
@@ -16,5 +16,5 @@
   tags:     httpd
 
 - name:     restorecon on /var/www/html
-  command:  restorecon /var/www/html
+  command:  restorecon -Rv /var/www/html
   tags:     httpd

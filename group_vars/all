@@ -8,11 +8,13 @@ laptop_ports:
   - '443/tcp'  # HTTPS
   - '22/tcp'   # SSH
   - '22/udp'   # SSH
+  - '8000/tcp' # kickstart
 
 ## vpn-profile vars
 redhat_ssh_server: ovpn-rdu2.redhat.com
 redhat_ssh_server_port: 330
 redhat_ssh_server_proxy_port: 9999
+
 
 ##Currently only referenced in /etc/hosts, but this will eventually be merged with other repos##
 domain:                    rnelson-demo.com
@@ -24,6 +26,13 @@ tower_hostname:            tower.rnelson-demo.com
 idm_hostname:              idm.rnelson-demo.com
 cloudforms_hostname:       cloudforms.rnelson-demo.com
 
+##shortnames for RNELSON-DEMO environment##
+laptop_shortname: laptop
+satellite_shortname: satellite
+tower_shortname: tower
+idm_shortname: idm
+cloudforms_shortname: cloudforms
+
 ##IP Addresses of RNELSON-DEMO Environment, this populates /etc/hosts##
 laptop_ip_address:         192.168.126.1
 satellite_ip_address:      192.168.126.2
@@ -33,8 +42,8 @@ cloudforms_ip_address:     192.168.126.5
 
 ##LibVirt Storgae and Network Variables##
 libvirt_storage_pool_name: Images
-libvirt_network_name:      demo
+libvirt_network_name:      rnelson-demo
 libvirt_forward_mode:      nat
 libvirt_bridge_name:       virbr5
-libvirt_ip_address:        192.168.126.1
+libvirt_ip_address:        192.168.127.1
 libvirt_netmask:           255.255.255.0
