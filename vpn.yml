@@ -1,0 +1,55 @@
+---
+- hosts: all
+  connection: local
+  vars:
+    laptop_local_user: rnelson
+    redhat_ssh_server: ovpn-rdu2.redhat.com
+    redhat_ssh_server_port: 330
+    redhat_ssh_server_proxy_port: 9999
+
+  vars_prompt:
+    - name: "passcode"
+      prompt: "What is your Red Hat SSO Password (pin + token)?"
+
+  tasks:
+    - name: check for existing SSH tunnel
+      shell: ps -ef | grep -iE -- "ss[h].*{{redhat_ssh_server_proxy_port}}" | awk '{print $2}'
+      register: proxy_pids
+      become: yes
+      tags: vpn
+
+    - debug:
+        msg: "Proxy detected running on {{redhat_ssh_server_proxy_port}} PIDs:{{proxy_pids.stdout}}"
+      become: yes
+      when: proxy_pids.stdout != ""
+      tags: vpn
+
+    - name: start ssh tunnel
+      shell: |
+        set +H
+        nohup sshpass -p {{passcode}} ssh -D {{redhat_ssh_server_proxy_port}} {{laptop_local_user}}@{{redhat_ssh_server}} -p {{redhat_ssh_server_port}} -N -oStrictHostKeyChecking=no &
+        sleep 5
+      become: yes
+      when: proxy_pids.stdout == ""
+      tags: vpn
+      notify:
+        - stop ssh tunnel
+
+    - name: Redirect traffic through correct ports
+      shell: nc -z home.corp.redhat.com 80 -w2 --proxy localhost:9999 --proxy-type socks5
+      become: yes
+      tags: vpn
+
+    - name: do proxy tasks (need to fix)
+      shell: |
+        http_proxy=socks5h://localhost:{{redhat_ssh_server_proxy_port}} rpm --import http://hdn.corp.redhat.com/rhel7-csb-stage/RPM-GPG-KEY-helpdesk
+        http_proxy=socks5h://localhost:{{redhat_ssh_server_proxy_port}} curl -o /etc/yum.repos.d/rhel7-csb-stage.repo http://hdn.corp.redhat.com/rhel7-csb-stage/rhel7-csb-stage.repo
+        http_proxy=socks5h://localhost:{{redhat_ssh_server_proxy_port}} yum install -y redhat-internal-cert-install redhat-internal-NetworkManager-openvpn-profiles
+      become: yes
+      tags: vpn
+
+  handlers:
+    - name: stop ssh tunnel
+      shell: ps -ef | grep -iE -- "ss[h].*{{redhat_ssh_server_proxy_port}}" | awk '{print $2}' | xargs kill -9
+      become: yes
+      tags: vpn

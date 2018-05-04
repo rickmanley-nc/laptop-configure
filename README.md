@@ -40,6 +40,7 @@ All variables are located in `group_vars/all`. Update that file with your enviro
 ## Remaining Items to Complete
 
 - VPN configuration works fine, but the prompt doesn't work inside of a role. Not sure why yet, which is why the run.sh has 2 separate playbooks...main.yml and vpn.yml.
+- YubiKey configuration.
 - download RHEL 7.4 ISO and store in /home/rnelson/Images/original
 - download Fedora 27 ISO and store in /home/rnelson/Images/original
 - include private and public ssh key
