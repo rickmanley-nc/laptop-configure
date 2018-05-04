@@ -1,6 +1,7 @@
 ---
 - name: Start and Enable firewalld
   systemd: name=firewalld state=started enabled=yes
+  become: yes
   tags: firewall
 
 - name: Configure firewalld
@@ -11,4 +12,6 @@
     state: enabled
     zone: FedoraWorkstation
   with_items: "{{ laptop_ports }}"
+  become: yes
+  ignore_errors: yes
   tags: firewall

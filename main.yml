@@ -10,6 +10,5 @@
     - libvirtd
     - httpd
     - create-libvirt-network
-    - vpn-profiles
 
 #- name: Need to configure YubiKey

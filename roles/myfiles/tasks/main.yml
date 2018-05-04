@@ -15,6 +15,7 @@
     owner: root
     group: root
     mode: 0644
+  become: yes
   tags: myfiles
 
 - name: Populate /etc/hosts
@@ -22,4 +23,5 @@
     src: "../templates/hosts.j2"
     dest: /etc/hosts
     mode: 0644
+  become: yes
   tags: myfiles

@@ -10,12 +10,6 @@ laptop_ports:
   - '22/udp'   # SSH
   - '8000/tcp' # kickstart
 
-## vpn-profile vars
-redhat_ssh_server: ovpn-rdu2.redhat.com
-redhat_ssh_server_port: 330
-redhat_ssh_server_proxy_port: 9999
-
-
 ##Currently only referenced in /etc/hosts, but this will eventually be merged with other repos##
 domain:                    rnelson-demo.com
 
@@ -45,5 +39,5 @@ libvirt_storage_pool_name: Images
 libvirt_network_name:      rnelson-demo
 libvirt_forward_mode:      nat
 libvirt_bridge_name:       virbr5
-libvirt_ip_address:        192.168.127.1
+libvirt_ip_address:        192.168.126.1
 libvirt_netmask:           255.255.255.0

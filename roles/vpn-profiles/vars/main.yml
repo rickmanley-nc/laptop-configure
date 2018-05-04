@@ -1,6 +1,0 @@
----
-vars_prompt:
-  - name: "passcode"
-    prompt: "What is your passcode (pin + token)?"
-
-#how do I add a vars_prompt inside a role before the series of tasks begins? Do I put this on the ansible-playbook command or within the vars folder's yml file?

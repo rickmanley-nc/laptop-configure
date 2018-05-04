@@ -1,8 +1,23 @@
 ---
 - name: Enable Google Chrome Repository
-  template:
-    src: "../templates/google-chrome.repo.j2"
+  copy:
+    src: "../files/google-chrome.repo."
     dest: /etc/yum.repos.d/google-chrome.repo
+  become: yes
+  tags: packages
+
+- name: Install Atom GPG key
+  rpm_key:
+    state: present
+    key: https://packagecloud.io/AtomEditor/atom/gpgkey
+  become: yes
+  tags: packages
+
+- name: Enable Atom Repository
+  copy:
+    src: "../files/atom.repo"
+    dest: /etc/yum.repos.d/atom.repo
+  become: yes
   tags: packages
 
 - name: Install Packages
@@ -25,4 +40,21 @@
     - vim
     - guake
     - PyYAML
+    - atom
+  become: yes
+  tags: packages
+
+- name: Install Atom's File Icons
+  command: /usr/bin/apm install file-icons
+  become: yes
+  tags: packages
+
+- name: Install Atom's Beautify
+  command: apm install atom-beautify
+  become: yes
+  tags: packages
+
+- name: Make guake autostart
+  command: cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
+  become: yes
   tags: packages

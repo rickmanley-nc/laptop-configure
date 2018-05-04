@@ -4,4 +4,5 @@
     name: libvirtd
     state: restarted
     enabled: yes
+  become: yes
   tags: libvirtd

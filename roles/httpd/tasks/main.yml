@@ -1,10 +1,12 @@
 ---
 - name:     Start and Enable httpd
   systemd:  name=httpd state=started enabled=yes
+  become: yes
   tags:     httpd
 
 - name:     Remove default index.html file
   command:  mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.backup creates=/etc/httpd/conf.d/welcome.backup removes=/etc/httpd/conf.d/welcome.conf
+  become: yes
   notify:   restart httpd
   tags:     httpd
 
@@ -13,8 +15,10 @@
     src:    "../templates/hosts.j2"
     dest:   /var/www/html/hosts
     mode:   0644
+  become: yes
   tags:     httpd
 
 - name:     restorecon on /var/www/html
   command:  restorecon -Rv /var/www/html
+  become: yes
   tags:     httpd

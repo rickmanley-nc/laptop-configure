@@ -4,16 +4,20 @@
     src: "../templates/custom-network.xml.j2"
     dest: /etc/libvirt/qemu/networks/{{ libvirt_network_name }}.xml
     mode: 0644
+  become: yes
   tags: network
 
 - name: Define {{ libvirt_network_name }} network in LibVirt
   command: virsh net-define /etc/libvirt/qemu/networks/{{ libvirt_network_name }}.xml
+  become: yes
   tags: network
 
 - name: Start {{ libvirt_network_name }} network in LibVirt
   command: virsh net-start {{ libvirt_network_name }}
+  become: yes
   tags: network
 
 - name: Set {{ libvirt_network_name }} network to autostart
   command: virsh net-autostart {{ libvirt_network_name }}
+  become: yes
   tags: network

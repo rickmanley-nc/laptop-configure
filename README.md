@@ -7,24 +7,21 @@
   - "/home/" 200+ GiB
   - "/boot" 200 MiB
   - "swap" 6 GiB
-- Set hostname to laptop.rnelson-demo.com
-- Install Atom from <https://atom.io/>
-  - "Ctrl + Shift + P", install Beautify and File Icons
-- Modify the following files with the correct variables for environment
-  - /home/rnelson/git/laptop-configure/group_vars/all
-- Execute the following command to pull down the run.sh script which will configure the environment and execute the main.yml playbook
-  - bash wget -qO- https://github.com/rickmanley-nc/laptop-configure/raw/master/run.sh | sudo bash
+  - Set hostname to laptop.rnelson-demo.com
+- Modify group_vars/all and vpn.yml vars in github.
+- Execute the following command to pull down the run.sh script which will configure the environment:
+  - wget -qO- https://github.com/rickmanley-nc/laptop-configure/raw/master/run.sh | bash
+- If you don't want to run the vpn.yml playbook, edit this out of run.sh. This could be cleaner..
 
 ## Roles
 
 - firewall (configure firewall ports for SSH and HTTP/HTTPS)
-- packages (install necessary packages)
+  - Currently, May 4, 2017, a bug exists: https://github.com/ansible/ansible/issues/38161. I have added 'ignore_errors' to the role, but once the bug is fixed, this should be removed.
+- packages (installs packages)
 - myfiles (local files needing to be copied to laptop)
-- libvirtd (configures libvirtd)
-- httpd (configures httpd for hosting necessary files)
-- openscap (makes separate directory, clone GitHub for scap-security-guide, copy combine-tailoring.py)
-- create-libvirt-network (creates libvirt network from user defined variables)
-- vpn-profiles (sets up SSH tunnel to Red Hat servers to download pre-configured VPN profiles)
+- libvirtd (configures libvirtd for eventual provisioning with Satellite)
+- httpd (configures httpd for eventual kickstarting and hosting of files)
+- create-libvirt-network (creates libvirt network, the eventual DEMO-environment)
 
 ## Vars
 
@@ -37,14 +34,15 @@ All variables are located in `group_vars/all`. Update that file with your enviro
 - packages
 - libvirtd
 - httpd
-- openscap
 - network
+- vpn
 
 ## Remaining Items to Complete
 
+- VPN configuration works fine, but the prompt doesn't work inside of a role. Not sure why yet, which is why the run.sh has 2 separate playbooks...main.yml and vpn.yml.
+- download RHEL 7.4 ISO and store in /home/rnelson/Images/original
+- download Fedora 27 ISO and store in /home/rnelson/Images/original
 - include private and public ssh key
-- automate installation of Atom and Beutify / File Icons
-- store inventory-tower-initial-setup and manifest-rnelson-sales.zip
 - https://developer.microsoft.com/en-us/windows/downloads/virtual-machines   and convert `qemu-img convert -f vmdk WinDev1710Eval-disk1.vmdk -O qcow2 WinDev1710Eval-disk1.qcow`
 
 ## License
