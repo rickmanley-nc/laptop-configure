@@ -16,7 +16,7 @@
 ## Roles
 
 - firewall (configure firewall ports for SSH and HTTP/HTTPS)
-  - Currently, May 4, 2017, a bug exists: https://github.com/ansible/ansible/issues/38161. I have added 'ignore_errors' to the role, but once the bug is fixed, this should be removed.
+  - Currently, May 4, 2018, a bug exists: https://github.com/ansible/ansible/issues/38161. I have added 'ignore_errors' to the role, but once the bug is fixed, this should be removed.
 - packages (installs packages)
 - myfiles (local files needing to be copied to laptop)
 - libvirtd (configures libvirtd for eventual provisioning with Satellite)
@@ -39,10 +39,15 @@ All variables are located in `group_vars/all`. Update that file with your enviro
 
 ## Remaining Items to Complete
 
+- Consider adding the following to disable Ansible's host key checking. Since we could be redeploying the same hostname/ip multiple times, this makes life easier:
+  - # uncomment this to disable SSH key host checking
+  - host_key_checking = False
 - VPN configuration works fine, but the prompt doesn't work inside of a role. Not sure why yet, which is why the run.sh has 2 separate playbooks...main.yml and vpn.yml.
+- Change libvirtd role to use 'virt', 'virt_net', and 'virt_pool' modules.
 - YubiKey configuration.
-- download RHEL 7.4 ISO and store in /home/rnelson/Images/original
-- download Fedora 27 ISO and store in /home/rnelson/Images/original
+- For kickstarting of VMs, current method is to use the Binary DVD and use a kickstart file. This works fine, but we could also use 'reposync' to then have the ostree available over HTTP, and still use a kickstart file. This would drastically increase the laptop-configure setup time though. Need to ponder on if it's just easier to download the ISOs:
+  - download RHEL 7.4 ISO and store in /home/rnelson/Images/original
+  - download Fedora 27 ISO and store in /home/rnelson/Images/original (this is for Ansible Workshop VM build)
 - include private and public ssh key
 - https://developer.microsoft.com/en-us/windows/downloads/virtual-machines   and convert `qemu-img convert -f vmdk WinDev1710Eval-disk1.vmdk -O qcow2 WinDev1710Eval-disk1.qcow`
 
