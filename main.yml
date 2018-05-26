@@ -5,8 +5,8 @@
 
   roles:
     - firewall
-    - myfiles
     - packages
+    - myfiles
     - libvirtd
     - httpd
     - create-libvirt-network

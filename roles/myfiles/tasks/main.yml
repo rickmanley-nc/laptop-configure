@@ -26,9 +26,11 @@
   become: yes
   tags: myfiles
 
-#- name: Disable SSH key host checking for Ansible (easier to do this since we rebuild environments a lot)
-#  lineinfile:
-#    dest: /etc/ansible/ansible.cfg
-#    regexp: '^(.*)host_key_checking(.*)$'
-#    line: 'host_key_checking'
-#    backrefs: yes
+- name: Copy over ansible-user.cfg to /home/{{laptop_local_user}}/.ansible.cfg
+  copy:
+    src: ansible-user.cfg
+    dest: /home/{{laptop_local_user}}/.ansible.cfg
+    owner: "{{ laptop_local_user }}"
+    group: "{{ laptop_local_user }}"
+    mode: 0664
+  tags: myfiles
