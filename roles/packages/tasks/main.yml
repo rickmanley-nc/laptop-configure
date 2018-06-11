@@ -21,7 +21,7 @@
   tags: packages
 
 - name: Install Packages
-  yum:
+  dnf:
     name: "{{ item }}"
     state: latest
   with_items:
