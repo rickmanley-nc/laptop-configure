@@ -1,7 +1,7 @@
 ---
 - name: Enable Google Chrome Repository
   copy:
-    src: "../files/google-chrome.repo."
+    src: "../files/google-chrome.repo"
     dest: /etc/yum.repos.d/google-chrome.repo
   become: yes
   tags: packages
@@ -21,7 +21,7 @@
   tags: packages
 
 - name: Install Packages
-  yum:
+  dnf:
     name: "{{ item }}"
     state: latest
   with_items:
