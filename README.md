@@ -12,6 +12,7 @@
 - Execute the following command to pull down the run.sh script which will configure the environment:
   - wget -qO- https://github.com/rickmanley-nc/laptop-configure/raw/master/run.sh | bash
 - If you don't want to run the vpn.yml playbook, edit this out of run.sh. This could be cleaner..
+- Download RHEL 7.4 ISO
 
 ## Roles
 

@@ -41,6 +41,8 @@
     - guake
     - PyYAML
     - atom
+    - cockpit
+    - tigervnc
   become: yes
   tags: packages
 
