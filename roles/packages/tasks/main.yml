@@ -56,6 +56,11 @@
   become: yes
   tags: packages
 
+- name: Install Atom's ansible-vault
+  command: apm install ansible-vault
+  become: yes
+  tags: packages
+
 - name: Make guake autostart
   command: cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
   become: yes
