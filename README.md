@@ -1,5 +1,12 @@
 # Using Ansible to Configure Laptop - SA
 
+## latest updates ##
+A few items failed during a Fedora 28 install on Sept 14, 2018:
+- /etc/libvirt/storage did not exist
+- need to install libselinux-python
+- firewall command needed to be commented out. I think this is because python3 modules for firewalld are not fully supported by ansible upstream. Need to doublecheck. As a workaround, I just commented out the firewall section, but I manually opened the ports necessary.
+- the VPN.yml playbook failed when run from the original wget. However, manually running it was successful.
+
 ## Requirements and Steps
 - Fedora installed
   - 32 GiB RAM (16 GiB Minimum)

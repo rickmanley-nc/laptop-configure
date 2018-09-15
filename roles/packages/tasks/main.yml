@@ -65,3 +65,8 @@
   command: cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
   become: yes
   tags: packages
+
+- name: Make cockpit autostart
+  command: systemctl enable cockpit.socket
+  become: yes
+  tags: packages
