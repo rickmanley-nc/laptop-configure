@@ -36,6 +36,8 @@
     - google-chrome-stable
     - NetworkManager-openvpn
     - NetworkManager-openvpn-gnome
+    - NetworkManager-l2tp
+    - NetworkManager-l2tp-gnome
     - wget
     - vim
     - guake
