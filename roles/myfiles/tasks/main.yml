@@ -34,3 +34,17 @@
     group: "{{ laptop_local_user }}"
     mode: 0664
   tags: myfiles
+
+- name: Copy Ansible hosts file
+  copy:
+    src: ansible-hosts
+    dest: /etc/ansible/hosts
+    mode: 0644
+  tags: myfiles
+
+- name: Copy bashrc
+  copy:
+    src: bashrc
+    dest: /home/rnelson/.bashrc
+    mode: 0644
+  tags: myfiles

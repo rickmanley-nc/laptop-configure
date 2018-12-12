@@ -1,5 +1,5 @@
 # Using Ansible to Configure Laptop - SA
-
+Need to create kickstart file and test against PXE
 ## latest updates ##
 A few items failed during a Fedora 28 install on Sept 14, 2018:
 - /etc/libvirt/storage did not exist
@@ -57,7 +57,9 @@ All variables are located in `group_vars/all`. Update that file with your enviro
   - download RHEL 7.4 ISO and store in /home/rnelson/Images/original
   - download Fedora 27 ISO and store in /home/rnelson/Images/original (this is for Ansible Workshop VM build)
 - include private and public ssh key
-- https://developer.microsoft.com/en-us/windows/downloads/virtual-machines   and convert `qemu-img convert -f vmdk WinDev1710Eval-disk1.vmdk -O qcow2 WinDev1710Eval-disk1.qcow`
+- https://developer.microsoft.com/en-us/windows/downloads/virtual-machines
+- Update ansible hosts file.
+- Update /etc/hosts file
 
 ## License
 

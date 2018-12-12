@@ -45,6 +45,7 @@
     - atom
     - cockpit
     - tigervnc
+    - python-pyghmi
   become: yes
   tags: packages
 
