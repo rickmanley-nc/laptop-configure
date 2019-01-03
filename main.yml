@@ -10,5 +10,3 @@
     - libvirtd
     - httpd
     - create-libvirt-network
-
-#- name: Need to configure YubiKey

@@ -1,9 +1,16 @@
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
-##This Section is for {{ domain }} Environment##
-{{ laptop_ip_address }} {{ laptop_hostname }} {{ laptop_shortname }}
-{{ satellite_ip_address }} {{ satellite_hostname }} {{ satellite_shortname }}
-{{ tower_ip_address }} {{ tower_hostname }} {{ tower_shortname }}
-{{ idm_ip_address }} {{ idm_hostname }} {{ idm_shortname }}
-{{ cloudforms_ip_address }} {{ cloudforms_hostname }} {{ cloudforms_shortname }}
+##Section for Laptop-based {{ domain }} Environment##
+#{{ laptop_ip_address }} {{ laptop_hostname }} {{ laptop_shortname }}
+#{{ satellite_ip_address }} {{ satellite_hostname }} {{ satellite_shortname }}
+#{{ tower_ip_address }} {{ tower_hostname }} {{ tower_shortname }}
+#{{ idm_ip_address }} {{ idm_hostname }} {{ idm_shortname }}
+#{{ cloudforms_ip_address }} {{ cloudforms_hostname }} {{ cloudforms_shortname }}
+
+##Section for HomeLab-based {{ domain }} Environment##
+10.0.0.11 rhhi1-gluster.rnelson-demo.com rhhi1-gluster
+10.0.0.12 rhhi2-gluster.rnelson-demo.com rhhi2-gluster
+10.0.0.13 rhhi3-gluster.rnelson-demo.com rhhi3-gluster
+192.168.1.15 rhvm.rnelson-demo.com
+192.168.1.25 bastion.rnelson-demo.com

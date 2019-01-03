@@ -13,4 +13,5 @@ PATH=/home/rnelson/oc-test/openshift-origin-client-tools-v3.10.0-dd10d17-linux-6
 
 #obtained from http://ezprompt.net/
 #PS1='[\u@\h 🎅🎄⛄🎅 \W]\$ '
-PS1='\[\e[35m\][\[\e[m\]\[\e[35m\]\d\[\e[m\] \[\e[35m\]\t\[\e[m\]\[\e[35m\]]\[\e[m\] 🎅🎄 [\u@\h \W] \$ '
+#PS1='\[\e[35m\][\[\e[m\]\[\e[35m\]\d\[\e[m\] \[\e[35m\]\t\[\e[m\]\[\e[35m\]]\[\e[m\] 🎅🎄 [\u@\h \W] \$ '
+PS1='\[\e[35m\][\[\e[m\]\[\e[35m\]\d\[\e[m\] \[\e[35m\]\t\[\e[m\]\[\e[35m\]]\[\e[m\] [\u@\h \w] \n\$ '

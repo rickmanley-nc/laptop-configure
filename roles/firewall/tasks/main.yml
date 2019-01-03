@@ -4,14 +4,14 @@
   become: yes
   tags: firewall
 
-#- name: Configure firewalld
-#  firewalld:
-#    port: "{{ item }}"
-#    permanent: true
-#    immediate: yes
-#    state: enabled
-#    zone: FedoraWorkstation
-#  with_items: "{{ laptop_ports }}"
-#  become: yes
-#  ignore_errors: yes
-#  tags: firewall
+- name: Configure firewalld
+  firewalld:
+    port: "{{ item }}"
+    permanent: true
+    immediate: yes
+    state: enabled
+    zone: FedoraWorkstation
+  with_items: "{{ laptop_ports }}"
+  become: yes
+#  ignore_errors: yes #reference for https://github.com/ansible/ansible/issues/38161
+  tags: firewall

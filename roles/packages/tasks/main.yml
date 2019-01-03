@@ -46,6 +46,10 @@
     - cockpit
     - tigervnc
     - python-pyghmi
+    - gnome-tweak-tool
+    - vlc
+    - libselinux-python
+#    - python-ovirt-engine-sdk4 #what Fedora repo does this come from?
   become: yes
   tags: packages
 

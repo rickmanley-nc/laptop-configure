@@ -28,16 +28,16 @@ idm_shortname: idm
 cloudforms_shortname: cloudforms
 
 ##IP Addresses of RNELSON-DEMO Environment, this populates /etc/hosts##
-laptop_ip_address:         192.168.126.1
-satellite_ip_address:      192.168.126.2
-tower_ip_address:          192.168.126.3
-idm_ip_address:            192.168.126.4
-cloudforms_ip_address:     192.168.126.5
+laptop_ip_address:         192.168.125.1
+satellite_ip_address:      192.168.125.2
+tower_ip_address:          192.168.125.3
+idm_ip_address:            192.168.125.4
+cloudforms_ip_address:     192.168.125.5
 
 ##LibVirt Storgae and Network Variables##
 libvirt_storage_pool_name: Images
-libvirt_network_name:      rnelson-demo
+libvirt_network_name:      laptop-demo
 libvirt_forward_mode:      nat
 libvirt_bridge_name:       virbr5
-libvirt_ip_address:        192.168.126.1
+libvirt_ip_address:        192.168.125.1
 libvirt_netmask:           255.255.255.0
