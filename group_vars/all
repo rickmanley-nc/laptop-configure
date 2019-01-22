@@ -18,21 +18,18 @@ laptop_hostname:           laptop.rnelson-demo.com
 satellite_hostname:        satellite.rnelson-demo.com
 tower_hostname:            tower.rnelson-demo.com
 idm_hostname:              idm.rnelson-demo.com
-cloudforms_hostname:       cloudforms.rnelson-demo.com
 
 ##shortnames for RNELSON-DEMO environment##
 laptop_shortname: laptop
 satellite_shortname: satellite
 tower_shortname: tower
 idm_shortname: idm
-cloudforms_shortname: cloudforms
 
 ##IP Addresses of RNELSON-DEMO Environment, this populates /etc/hosts##
 laptop_ip_address:         192.168.125.1
 satellite_ip_address:      192.168.125.2
 tower_ip_address:          192.168.125.3
 idm_ip_address:            192.168.125.4
-cloudforms_ip_address:     192.168.125.5
 
 ##LibVirt Storgae and Network Variables##
 libvirt_storage_pool_name: Images

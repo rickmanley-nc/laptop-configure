@@ -40,7 +40,6 @@
     - NetworkManager-l2tp-gnome
     - wget
     - vim
-    - guake
     - PyYAML
     - atom
     - cockpit
@@ -49,7 +48,7 @@
     - gnome-tweak-tool
     - vlc
     - libselinux-python
-#    - python-ovirt-engine-sdk4 #what Fedora repo does this come from?
+#    - python-ovirt-engine-sdk4 #install with pip. Not in a repo available to Fedora
   become: yes
   tags: packages
 
@@ -65,11 +64,6 @@
 
 - name: Install Atom's ansible-vault
   command: apm install ansible-vault
-  become: yes
-  tags: packages
-
-- name: Make guake autostart
-  command: cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
   become: yes
   tags: packages
 

@@ -1,56 +1,31 @@
 # Using Ansible to Configure Laptop - SA
 
-Create kickstart file and test against PXE
-
 ## latest updates ##
+
 A few items failed during a Fedora 28 install on Sept 14, 2018:
 - /etc/libvirt/storage did not exist
 - firewall command needed to be commented out. I think this is because python3 modules for firewalld are not fully supported by ansible upstream. Need to doublecheck. As a workaround, I just commented out the firewall section, but I manually opened the ports necessary.
 - the VPN.yml playbook failed when run from the original wget. However, manually running it was successful.
 
 ## Requirements and Steps
-- Fedora installed
-  - 32 GiB RAM (16 GiB Minimum)
-  - "/" 40 GiB
-  - "/home/" 200+ GiB
-  - "/boot" 200 MiB
-  - "swap" 6 GiB
-  - Set hostname to laptop.rnelson-demo.com
-- Modify group_vars/all and vpn.yml vars in github.
-- Execute the following command to pull down the run.sh script which will configure the environment:
+- Modify `group_vars/all` , `run.sh` , and `vpn.yml`
+- Execute the following command to pull down the run.sh script which will configure the laptop:
   - wget -qO- https://github.com/rickmanley-nc/laptop-configure/raw/master/run.sh | bash
-- If you don't want to run the vpn.yml playbook, edit this out of run.sh. This could be cleaner..
-- Download RHEL 7.4 ISO
 
 ## Roles
 
-- firewall (configure firewall ports for SSH and HTTP/HTTPS)
-- packages (installs packages)
-- myfiles (local files needing to be copied to laptop)
-- libvirtd (configures libvirtd for eventual provisioning with Satellite)
-- httpd (configures httpd for eventual kickstarting and hosting of files)
-- create-libvirt-network (creates libvirt network, the eventual DEMO-environment)
-
-## Vars
-
-All variables are located in `group_vars/all`. Update that file with your environment details.
-
-## Tags
-
-- firewall
-- myfiles
-- packages
-- libvirtd
-- httpd
-- network
-- vpn
+- firewall - configure firewall ports for SSH and HTTP/HTTPS
+- packages - installs packages
+- myfiles - local files needing to be copied to laptop
+- libvirtd - configures libvirtd to allow Satellite to have libvirtd as a provider for provisioning from Satellite
+- httpd - configures httpd for kickstart and hosting files
+- create-libvirt-network - creates laptop network for DEMO-environment
 
 ## Remaining Items to Complete
 
-- VPN configuration works fine, but the prompt doesn't work inside of a role. Not sure why yet, which is why the run.sh has 2 separate playbooks...main.yml and vpn.yml.
+- Create kickstart file and test against PXE
+- VPN configuration works, but the prompt for 2FA doesn't work inside of a role. Not sure why yet, which is why the run.sh has 2 separate playbooks...main.yml and vpn.yml.
 - Change libvirtd role to use 'virt', 'virt_net', and 'virt_pool' modules.
-- For kickstarting of VMs, current method is to use the Binary DVD and use a kickstart file. This works fine, but we could also use 'reposync' to then have the ostree available over HTTP, and still use a kickstart file. This would drastically increase the laptop-configure setup time though. Need to ponder on if it's just easier to download the ISOs:
-  - download RHEL 7 ISO and store in /home/rnelson/Images/original
 
 ## License
 
