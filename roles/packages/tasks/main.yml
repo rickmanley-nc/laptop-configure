@@ -77,3 +77,8 @@
   command: systemctl enable cockpit.socket
   become: yes
   tags: packages
+
+- name: Add oVirt.image-template
+  command: ansible-galaxy install ovirt.image-template
+  become: yes
+  tags: packages
