@@ -48,6 +48,9 @@
     - gnome-tweak-tool
     - vlc
     - libselinux-python
+    - mediawriter
+    - virt-viewer
+    - ipmitool
 #    - python-ovirt-engine-sdk4 #install with pip. Not in a repo available to Fedora
   become: yes
   tags: packages
