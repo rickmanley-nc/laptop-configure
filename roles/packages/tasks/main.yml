@@ -43,6 +43,7 @@
     - PyYAML
     - atom
     - cockpit
+    - cockpit-pcp
     - tigervnc
     - python-pyghmi
     - gnome-tweak-tool
