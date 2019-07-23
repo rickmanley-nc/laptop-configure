@@ -73,6 +73,11 @@
   become: yes
   tags: packages
 
+- name: Install Atom's ansible-vault
+  command: apm install minimap
+  become: yes
+  tags: packages
+
 - name: Make cockpit autostart
   command: systemctl enable cockpit.socket
   become: yes
