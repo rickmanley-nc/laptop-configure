@@ -9,7 +9,7 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-PATH=/home/rnelson/oc-test/openshift-origin-client-tools-v3.10.0-dd10d17-linux-64bit:$PATH
+#PATH=/home/rnelson/oc-test/openshift-origin-client-tools-v3.10.0-dd10d17-linux-64bit:$PATH
 
 #obtained from http://ezprompt.net/
 #PS1='[\u@\h 🎅🎄⛄🎅 \W]\$ '

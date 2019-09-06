@@ -73,7 +73,7 @@
   become: yes
   tags: packages
 
-- name: Install Atom's ansible-vault
+- name: Install Atom's minimap
   command: apm install minimap
   become: yes
   tags: packages

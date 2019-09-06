@@ -7,6 +7,6 @@
     - firewall
     - packages
     - myfiles
-#    - libvirtd
-#    - httpd
-#    - create-libvirt-network
+    - libvirtd
+    - httpd
+    - create-libvirt-network
