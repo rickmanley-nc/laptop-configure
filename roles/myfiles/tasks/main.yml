@@ -40,6 +40,7 @@
     src: ansible-hosts
     dest: /etc/ansible/hosts
     mode: 0644
+  become: true
   tags: myfiles
 
 - name: Copy bashrc

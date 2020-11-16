@@ -45,9 +45,9 @@
     - cockpit
     - cockpit-pcp
     - tigervnc
-    - python-pyghmi
+      #  - python-pyghmi
     - gnome-tweak-tool
-    - vlc
+      #    - vlc
     - libselinux-python
     - mediawriter
     - virt-viewer

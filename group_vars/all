@@ -33,7 +33,7 @@ idm_ip_address:            192.168.125.4
 
 ##LibVirt Storgae and Network Variables##
 libvirt_storage_pool_name: Images
-libvirt_network_name:      laptop-demo
+libvirt_network_name:      rnelson-demo
 libvirt_forward_mode:      nat
 libvirt_bridge_name:       virbr5
 libvirt_ip_address:        192.168.125.1
